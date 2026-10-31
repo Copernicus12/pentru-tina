@@ -8,51 +8,10 @@
   <meta name="description" content="O scrisoare pentru Titi.">
   <title>Pentru tine, Titi</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23edf0e9'/%3E%3Cpath d='M32 47 13 28C2 14 23 6 32 21 41 6 62 14 51 28Z' fill='%2353624f'/%3E%3C/svg%3E">
-  <style>
-    :root { color-scheme: light; --ink: #344232; --muted: #6d7866; --paper: #fffdf7; --background: #edf0e9; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--background); color: var(--ink); -webkit-font-smoothing: antialiased; }
-    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 10%, #fffaf1aa, transparent 60%), radial-gradient(ellipse at 90% 80%, #d9e2d580, transparent 55%); z-index: -1; }
-    ::selection { background: #dce4d2; }
-    .topline { max-width: 1120px; margin: auto; padding: 30px 30px; display: flex; align-items: center; justify-content: space-between; font: 11px/1.5 Arial, sans-serif; letter-spacing: .18em; text-transform: uppercase; }
-    .topline span:last-child { color: var(--muted); letter-spacing: .1em; }
-    .hero { padding: 63px 24px 60px; text-align: center; }
-    .sprig { display: block; width: 64px; height: 72px; margin: 0 auto 25px; color: #7d8e73; }
-    .eyebrow { margin: 0 0 19px; font: 10px/1.6 Arial, sans-serif; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
-    h1 { margin: 0; font: normal clamp(46px, 8vw, 78px)/1.12 Georgia, 'Times New Roman', serif; letter-spacing: -.055em; }
-    h1 em { font-weight: normal; }
-    .intro { margin: 22px 0 30px; color: var(--muted); font: 16px/1.7 Georgia, serif; }
-    .read-link { display: inline-flex; gap: 18px; align-items: center; border-bottom: 1px solid #9aa68d; padding: 9px 0; text-decoration: none; color: var(--ink); font: 11px/1.5 Arial, sans-serif; letter-spacing: .1em; }
-    .read-link span { transition: transform .2s; font-size: 17px; }
-    .read-link:hover span { transform: translateY(3px); }
-    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 7px; }
-    .letter-wrap { padding: 0 22px; }
-    .letter { position: relative; max-width: 740px; margin: 0 auto; padding: 61px 70px 53px; background: var(--paper); border: 1px solid #e3e5da; border-radius: 3px; box-shadow: 0 18px 55px #34423208, 0 2px 5px #34423204; scroll-margin-top: 25px; }
-    .letter::before { content: ""; position: absolute; top: -7px; left: 10px; right: 10px; height: 6px; background: #f8f8ef; border: 1px solid #e3e5da; border-bottom: 0; border-radius: 3px 3px 0 0; }
-    .letter-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 35px; }
-    .salutation { margin: 0; font: italic 28px/1.4 Georgia, serif; }
-    .heart { width: 25px; height: 25px; color: #8d9a7c; }
-    .letter p:not(.salutation) { margin: 0 0 24px; font: 18px/1.95 Georgia, 'Times New Roman', serif; color: #4a4e44; overflow-wrap: break-word; }
-    .letter .closing { padding-top: 26px; border-top: 1px solid #e5e7dc; margin-top: 35px !important; }
-    .signature { margin-top: 34px; text-align: right; font: italic 25px/1.5 Georgia, serif; }
-    footer { padding: 38px 24px 43px; text-align: center; color: #7e8976; font: 10px/1.6 Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
-    footer span { display: inline-block; margin: 0 12px; font-size: 12px; }
-    @media (max-width: 600px) {
-      .topline { padding: 23px 23px; font-size: 9px; }
-      .hero { padding: 42px 22px 51px; }
-      .sprig { margin-bottom: 22px; }
-      .letter-wrap { padding: 0 15px; }
-      .letter { padding: 35px 27px 34px; }
-      .letter p:not(.salutation) { font-size: 17px; line-height: 1.9; }
-      .letter-header { margin-bottom: 27px; }
-      .salutation { font-size: 25px; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .read-link span { transition: none; } }
-    @media print { body { background: white; } body::before, .topline, .hero, footer { display: none; } .letter-wrap { padding: 0; } .letter { max-width: none; padding: 20px; box-shadow: none; border: 0; } .letter::before { display: none; } }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="cover">
   <header class="topline"><span>Titi &amp; Idi</span><span>Câteva cuvinte din suflet</span></header>
   <main>
     <section class="hero" aria-labelledby="title">
@@ -61,78 +20,12 @@
         <path d="M11 66C20 47 35 24 53 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         <path d="M23 45C20 40 19 35 20 30M23 45C29 46 35 44 40 40M32 32C30 28 30 23 31 20M32 32C38 32 43 29 47 25M41 21C40 19 40 17 41 15" stroke="currentColor" stroke-opacity=".65" stroke-width=".85" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <p class="eyebrow">O scrisoare pentru tine</p>
+      <p class="eyebrow">O scrisoare în patru părți</p>
       <h1 id="title">Pentru tine, <em>Titi.</em></h1>
       <p class="intro">Un mulțumesc. Un iartă-mă. Și tot ce rămâne.</p>
-      <a class="read-link" href="#scrisoare">Citește scrisoarea <span aria-hidden="true">↓</span></a>
+      <a class="read-link" href="scrisoare-1.html">Deschide scrisoarea <span aria-hidden="true">→</span></a>
     </section>
-    <div class="letter-wrap">
-      <article class="letter" id="scrisoare" aria-label="Scrisoare pentru Titi">
-        <div class="letter-header">
-          <p class="salutation">Titi,</p>
-          <svg class="heart" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 27 5 16C-3 7 10-1 16 9 22-1 35 7 27 16Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p>Vreau sa incep cu un multumesc pentru ca ai fost tu, in felul tau si ca ai tinut la mine intr un mod in care poate nu meritam, adica tu m ai iubit chiar si daca eu am fost nesimțit sau nu am arătat-o empatie in unele situatii in care ar trebui sa fi aratat.</p>
-        <p>Multumesc pentru ca atunci cand m am simtit singur ai fost acolo chiar daca eu nu am fost cand tu te simțeai singura. Multumesc ca ai stat sa imi explici si sa ma inveti ce insemana o relatie frumoasa si adevarata. Multumesc ca te ai gandit la mine mai mult decat m am gandit eu in anumite situatii.</p>
-        <p>Si multumesc ca atunci cand lumea spunea Tina sau Razvi ai facut sa se spuna defapt Tina si Razvi.</p>
-        <p>Scuze pentru faza de pe Nistru cu urlatul si ca te am facut in toate felurile. Scuze pentru noptile cand am fost langa tine, dormeam dar tu plangeai. Scuze pentru tot ce ti am facut si am provocat plansete si tristete.</p>
-        <p class="closing">Ai grijuta de tine si jur ca nu o sa uit sau nu o sa iau în batjocura tot ce a fost intre noi.</p>
-        <div class="signature">Idi</div>
-      </article>
-    </div>
   </main>
   <footer>Titi <span aria-hidden="true">♡</span> Idi</footer>
-  <script>
-    (() => {
-      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
-
-      const letter = document.querySelector('.letter');
-      const targets = [letter, ...letter.children, document.querySelector('footer')];
-      const animations = new Set();
-      let observer;
-
-      function updateMotion() {
-        observer?.disconnect();
-        animations.forEach(animation => animation.finish());
-        animations.clear();
-        if (motionPreference.matches) return;
-
-        observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            observer.unobserve(entry.target);
-
-            const isPaper = entry.target === letter;
-            const keyframes = isPaper
-              ? [
-                  { transform: 'translateY(28px) scale(.985)' },
-                  { transform: 'translateY(0) scale(1)' }
-                ]
-              : [
-                  { opacity: 0, transform: 'translateY(22px)' },
-                  { opacity: 1, transform: 'translateY(0)' }
-                ];
-            const animation = entry.target.animate(keyframes, {
-              duration: isPaper ? 1100 : 850,
-              easing: 'cubic-bezier(.22, 1, .36, 1)'
-            });
-            animations.add(animation);
-            animation.onfinish = () => animations.delete(animation);
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-
-        targets.forEach(target => observer.observe(target));
-      }
-
-      updateMotion();
-      motionPreference.addEventListener('change', updateMotion);
-      window.addEventListener('beforeprint', () => {
-        observer?.disconnect();
-        animations.forEach(animation => animation.finish());
-      });
-      window.addEventListener('afterprint', updateMotion);
-    })();
-  </script>
 </body>
 </html>

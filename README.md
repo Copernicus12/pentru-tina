@@ -1,10 +1,12 @@
 # Pentru tine, Titi
 
-O pagină statică, în limba română, găzduită pe GitHub Pages. Fără dependențe sau pași de build.
+Site static pe GitHub Pages, fără dependențe sau build.
 
-Deschide `index.html` în browser pentru vizualizare locală. Textul și stilurile sunt în același fișier.
+`index.html` este coperta. Scrisoarea este împărțită în patru pagini:
+`scrisoare-1.html` până la `scrisoare-4.html`.
+Stilurile sunt în `style.css`, iar animațiile și pornirea din partea de sus sunt în `script.js`.
 
-Publicare: GitHub → Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
-Modificările trimise pe `main` se publică automat.
+Navigarea funcționează și fără JavaScript. Fiecare secvență are butoane Înapoi / Mai departe și acces direct la toate cele patru părți.
 
-Documentație: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Publicare: Settings → Pages → Deploy from a branch → main → / (root).
+Modificările trimise pe main se publică automat.

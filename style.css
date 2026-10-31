@@ -1,0 +1,72 @@
+:root { color-scheme: light; --ink: #344232; --muted: #6d7866; --paper: #fffdf7; --background: #edf0e9; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--background); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 10%, #fffaf1aa, transparent 60%), radial-gradient(ellipse at 90% 80%, #d9e2d580, transparent 55%); z-index: -1; }
+    ::selection { background: #dce4d2; }
+    .topline { max-width: 1120px; margin: auto; padding: 30px 30px; display: flex; align-items: center; justify-content: space-between; font: 11px/1.5 Arial, sans-serif; letter-spacing: .18em; text-transform: uppercase; }
+    .topline span:last-child { color: var(--muted); letter-spacing: .1em; }
+    .hero { padding: 63px 24px 60px; text-align: center; }
+    .sprig { display: block; width: 64px; height: 72px; margin: 0 auto 25px; color: #7d8e73; }
+    .eyebrow { margin: 0 0 19px; font: 10px/1.6 Arial, sans-serif; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
+    h1 { margin: 0; font: normal clamp(46px, 8vw, 78px)/1.12 Georgia, 'Times New Roman', serif; letter-spacing: -.055em; }
+    h1 em { font-weight: normal; }
+    .intro { margin: 22px 0 30px; color: var(--muted); font: 16px/1.7 Georgia, serif; }
+    .read-link { display: inline-flex; gap: 18px; align-items: center; border-bottom: 1px solid #9aa68d; padding: 9px 0; text-decoration: none; color: var(--ink); font: 11px/1.5 Arial, sans-serif; letter-spacing: .1em; }
+    .read-link span { transition: transform .2s; font-size: 17px; }
+    .read-link:hover span { transform: translateY(3px); }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 7px; }
+    .letter-wrap { padding: 0 22px; }
+    .letter { position: relative; max-width: 740px; margin: 0 auto; padding: 61px 70px 53px; background: var(--paper); border: 1px solid #e3e5da; border-radius: 3px; box-shadow: 0 18px 55px #34423208, 0 2px 5px #34423204; scroll-margin-top: 25px; }
+    .letter::before { content: ""; position: absolute; top: -7px; left: 10px; right: 10px; height: 6px; background: #f8f8ef; border: 1px solid #e3e5da; border-bottom: 0; border-radius: 3px 3px 0 0; }
+    .letter-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 35px; }
+    .salutation { margin: 0; font: italic 28px/1.4 Georgia, serif; }
+    .heart { width: 25px; height: 25px; color: #8d9a7c; }
+    .letter p:not(.salutation) { margin: 0 0 24px; font: 18px/1.95 Georgia, 'Times New Roman', serif; color: #4a4e44; overflow-wrap: break-word; }
+    .letter .closing { padding-top: 26px; border-top: 1px solid #e5e7dc; margin-top: 35px !important; }
+    .signature { margin-top: 34px; text-align: right; font: italic 25px/1.5 Georgia, serif; }
+    footer { padding: 38px 24px 43px; text-align: center; color: #7e8976; font: 10px/1.6 Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    footer span { display: inline-block; margin: 0 12px; font-size: 12px; }
+    @media (max-width: 600px) {
+      .topline { padding: 23px 23px; font-size: 9px; }
+      .hero { padding: 42px 22px 51px; }
+      .sprig { margin-bottom: 22px; }
+      .letter-wrap { padding: 0 15px; }
+      .letter { padding: 35px 27px 34px; }
+      .letter p:not(.salutation) { font-size: 17px; line-height: 1.9; }
+      .letter-header { margin-bottom: 27px; }
+      .salutation { font-size: 25px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .read-link span { transition: none; } }
+    @media print { body { background: white; } body::before, .topline, .hero, footer { display: none; } .letter-wrap { padding: 0; } .letter { max-width: none; padding: 20px; box-shadow: none; border: 0; } .letter::before { display: none; } }
+  
+    .hero--chapter { padding: 28px 24px 43px; }
+    .hero--chapter h1 { font-size: clamp(37px, 7vw, 56px); }
+    .hero--chapter .sprig { width: 43px; height: 49px; margin-bottom: 20px; }
+    .chapters { display: flex; justify-content: center; gap: 12px; margin: 0 auto 35px; padding: 0 20px; }
+    .chapters a { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid #cbd2c2; border-radius: 50%; text-decoration: none; color: var(--muted); font: 12px/1 Arial, sans-serif; transition: background .2s, border-color .2s; }
+    .chapters a:hover { background: #e0e7d8; border-color: #8d9a7c; }
+    .chapters a[aria-current="page"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .page-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 740px; margin: 24px auto 0; padding: 0 0 8px; }
+    .page-nav a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 20px; border: 1px solid #cbd2c2; border-radius: 4px; color: var(--ink); text-decoration: none; font: 12px/1.5 Arial, sans-serif; transition: background .2s; }
+    .page-nav a:hover { background: #dfe6d8; }
+    .page-nav .next { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .page-nav .next:hover { background: #4b5c46; }
+    .page-count { color: var(--muted); font: 11px/1.5 Arial, sans-serif; white-space: nowrap; }
+    .letter .closing { margin-top: 0 !important; padding-top: 0; border-top: 0; }
+    .cover { min-height: 100svh; display: flex; flex-direction: column; }
+    .cover main { flex: 1; display: grid; place-items: center; }
+    .cover .hero { padding-top: 35px; padding-bottom: 55px; }
+    .cover .read-link span { transform: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero { animation: welcome .9s cubic-bezier(.22, 1, .36, 1) both; }
+      @keyframes welcome { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    }
+    @media (max-width: 600px) {
+      .hero--chapter { padding: 19px 22px 31px; }
+      .chapters { margin-bottom: 28px; }
+      .page-nav { flex-wrap: wrap; gap: 10px; }
+      .page-nav a { padding: 12px 14px; }
+      .page-count { order: 3; flex-basis: 100%; text-align: center; padding-top: 8px; }
+    }
+    @media print { .chapters, .page-nav { display: none; } }
