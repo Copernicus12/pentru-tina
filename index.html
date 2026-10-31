@@ -73,8 +73,8 @@
           <svg class="heart" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 27 5 16C-3 7 10-1 16 9 22-1 35 7 27 16Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <p>Vreau sa incep cu un multumesc pentru ca ai fost tu, in felul tau si ca ai tinut la mine intr un mod in care poate nu meritam, adica tu m ai iubit chiar si daca eu am fost nesimțit sau nu am arătat-o empatie in unele situatii in care ar trebui sa fi aratat.</p>
-        <p>Multumesc pentru ca atunci cand m am simtit singur ai fost acolo chiar daca eu nu am fost cand tu te simțeai singura. Multumesc ca ai stat sa imi explici si sa ma inveti ce insemana o relatie frumoasa si adevarata. Multumesc ca te ai gandit la mine mai mult decat m am gandit eu in anumite siruatii.</p>
-        <p>Si multumesc ca atunci cand lumea spunea Titi sau Idi ai facut sa se spuna defapt Titi si Idi.</p>
+        <p>Multumesc pentru ca atunci cand m am simtit singur ai fost acolo chiar daca eu nu am fost cand tu te simțeai singura. Multumesc ca ai stat sa imi explici si sa ma inveti ce insemana o relatie frumoasa si adevarata. Multumesc ca te ai gandit la mine mai mult decat m am gandit eu in anumite situatii.</p>
+        <p>Si multumesc ca atunci cand lumea spunea Tina sau Razvi ai facut sa se spuna defapt Tina si Razvi.</p>
         <p>Scuze pentru faza de pe Nistru cu urlatul si ca te am facut in toate felurile. Scuze pentru noptile cand am fost langa tine, dormeam dar tu plangeai. Scuze pentru tot ce ti am facut si am provocat plansete si tristete.</p>
         <p class="closing">Ai grijuta de tine si jur ca nu o sa uit sau nu o sa iau în batjocura tot ce a fost intre noi.</p>
         <div class="signature">Idi</div>
@@ -82,5 +82,57 @@
     </div>
   </main>
   <footer>Titi <span aria-hidden="true">♡</span> Idi</footer>
+  <script>
+    (() => {
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+
+      const letter = document.querySelector('.letter');
+      const targets = [letter, ...letter.children, document.querySelector('footer')];
+      const animations = new Set();
+      let observer;
+
+      function updateMotion() {
+        observer?.disconnect();
+        animations.forEach(animation => animation.finish());
+        animations.clear();
+        if (motionPreference.matches) return;
+
+        observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
+
+            const isPaper = entry.target === letter;
+            const keyframes = isPaper
+              ? [
+                  { transform: 'translateY(28px) scale(.985)' },
+                  { transform: 'translateY(0) scale(1)' }
+                ]
+              : [
+                  { opacity: 0, transform: 'translateY(22px)' },
+                  { opacity: 1, transform: 'translateY(0)' }
+                ];
+            const animation = entry.target.animate(keyframes, {
+              duration: isPaper ? 1100 : 850,
+              easing: 'cubic-bezier(.22, 1, .36, 1)'
+            });
+            animations.add(animation);
+            animation.onfinish = () => animations.delete(animation);
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+        targets.forEach(target => observer.observe(target));
+      }
+
+      updateMotion();
+      motionPreference.addEventListener('change', updateMotion);
+      window.addEventListener('beforeprint', () => {
+        observer?.disconnect();
+        animations.forEach(animation => animation.finish());
+      });
+      window.addEventListener('afterprint', updateMotion);
+    })();
+  </script>
 </body>
 </html>
