@@ -1,4 +1,4 @@
-# Pentru tine, TIti
+# Pentru tine, Titi
 
 O pagină statică, în limba română, găzduită pe GitHub Pages. Fără dependențe sau pași de build.
 
